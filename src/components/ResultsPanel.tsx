@@ -4,9 +4,10 @@ interface ResultsPanelProps {
   result: Result | null;
   live: Metrics;
   status: string;
+  onRestart: () => void;
 }
 
-export function ResultsPanel({ result, live, status }: ResultsPanelProps) {
+export function ResultsPanel({ result, live, status, onRestart }: ResultsPanelProps) {
   const metrics = result ?? live;
   return (
     <section className="results-panel" aria-label="Typing results">
@@ -31,7 +32,12 @@ export function ResultsPanel({ result, live, status }: ResultsPanelProps) {
         <span>Consistency</span>
       </div>
       {status === "finished" && (
-        <p className="result-note">Result saved to your local history.</p>
+        <div className="result-actions">
+          <p className="result-note">Result saved to your local history.</p>
+          <button className="try-again-button" onClick={onRestart}>
+            Try Again
+          </button>
+        </div>
       )}
     </section>
   );

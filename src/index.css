@@ -97,7 +97,8 @@ h1 {
   margin-bottom: 16px;
 }
 .mode-tabs,
-.mode-options {
+.mode-options,
+.style-options {
   display: flex;
   gap: 5px;
 }
@@ -122,6 +123,13 @@ h1 {
   background: #17211b;
   color: #f4f6f0;
   border-color: #17211b;
+}
+.style-options {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.style-options button {
+  border: 1px solid #c8d0c6;
 }
 .test-card {
   background: #f7f8f3;
@@ -218,10 +226,23 @@ h1 {
   letter-spacing: 0.08em;
 }
 .result-note {
-  grid-column: 1 / -1;
   color: #d05c2c;
   font-size: 0.75rem;
   margin: 2px 0 0;
+}
+.result-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.try-again-button {
+  border: 1px solid #d05c2c;
+  background: transparent;
+  color: #d05c2c;
+  padding: 8px 12px;
+  font-size: 0.75rem;
 }
 .history {
   padding: 56px 0 72px;

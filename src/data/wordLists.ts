@@ -40,3 +40,19 @@ export const WORD_LIST = [
   "work",
   "pattern",
 ];
+
+export const SENTENCE_LIST = [
+  "A clear mind finds a steady rhythm.",
+  "Small practice sessions build lasting skill.",
+  "The quickest path is often calm and focused.",
+  "Good tools make difficult work feel lighter.",
+  "Every careful keystroke moves the idea forward.",
+  "Curious people turn questions into useful answers.",
+  "A thoughtful pause can improve the next decision.",
+  "Bright ideas grow when patient hands shape them.",
+  "The best results come from returning every day.",
+  "Simple habits create room for excellent work.",
+];
+
+export const PUNCTUATION = [".", ",", "!", "?", ";", ":", "'", '"', "-"];
+export const SYMBOLS = ["@", "#", "$", "%", "&", "*", "(", ")", "+", "=", "/"];

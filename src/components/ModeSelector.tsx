@@ -14,13 +14,13 @@ export function ModeSelector({ mode, onChange }: ModeSelectorProps) {
       <div className="mode-tabs">
         <button
           className={mode.kind === "timed" ? "active" : ""}
-          onClick={() => onChange({ kind: "timed", value: 30 })}
+          onClick={() => onChange({ ...mode, kind: "timed", value: 30 })}
         >
           Timed
         </button>
         <button
           className={mode.kind === "words" ? "active" : ""}
-          onClick={() => onChange({ kind: "words", value: 25 })}
+          onClick={() => onChange({ ...mode, kind: "words", value: 25 })}
         >
           Words
         </button>
@@ -30,10 +30,21 @@ export function ModeSelector({ mode, onChange }: ModeSelectorProps) {
           <button
             key={value}
             className={mode.value === value ? "selected" : ""}
-            onClick={() => onChange({ kind: mode.kind, value })}
+            onClick={() => onChange({ ...mode, value })}
           >
             {value}
             {mode.kind === "timed" ? " sec" : " words"}
+          </button>
+        ))}
+      </div>
+      <div className="style-options" aria-label="Passage style">
+        {(["words", "punctuation", "sentences"] as const).map((style) => (
+          <button
+            key={style}
+            className={mode.style === style ? "selected" : ""}
+            onClick={() => onChange({ ...mode, style })}
+          >
+            {style[0].toUpperCase() + style.slice(1)}
           </button>
         ))}
       </div>

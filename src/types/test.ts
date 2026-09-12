@@ -1,9 +1,11 @@
 export type TestStatus = "idle" | "running" | "finished";
 export type ModeKind = "timed" | "words";
+export type PassageStyle = "words" | "punctuation" | "sentences";
 
 export interface TestMode {
   kind: ModeKind;
   value: number;
+  style: PassageStyle;
 }
 
 export interface Result {

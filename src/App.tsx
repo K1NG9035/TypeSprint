@@ -9,7 +9,11 @@ import { useTypingTest } from "./hooks/useTypingTest";
 import type { Result, TestMode } from "./types/test";
 
 function App() {
-  const [mode, setMode] = useState<TestMode>({ kind: "timed", value: 30 });
+  const [mode, setMode] = useState<TestMode>({
+    kind: "timed",
+    value: 30,
+    style: "words",
+  });
   const [lastResult, setLastResult] = useState<Result | null>(null);
   const { history, addResult } = useLocalHistory();
   const handleFinish = useCallback(
@@ -83,6 +87,7 @@ function App() {
           result={lastResult}
           live={test.metrics}
           status={test.status}
+          onRestart={test.reset}
         />
       </section>
       <HistoryList history={history} />
